@@ -18,7 +18,9 @@ pipeline
         {steps {sh 'mvn package'}}
 
         stage ('deploy to tomcat server')
-        {steps { sh 'cp target/webapp.war /opt/tomcat9/webapps/'}}
+        {steps { sh 'cp webapp/target/webapp.war /opt/tomcat9/webapps/'
+
+}}
  
     }
 }
