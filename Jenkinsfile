@@ -2,19 +2,19 @@ pipeline
 {
     agent any
     stages{
-        stages ('scm checkout')
-    {steps{git 'https://github.com/HarrisKabala/mavenproject.git' }
+        stage ('scm checkout')
+    {steps {git 'https://github.com/HarrisKabala/mavenproject.git' }
 }
-        stages ('code compile')
-        {steps {sh 'mvn compile'}}
+        stage ('code compile')
+        {stesp {sh 'mvn compile'}}
 
-        stages ('unit test')
+        stage ('unit test')
         {steps {sh 'mvn test'}}
 
-        stages ('execute test')
+        stage ('execute test')
         {steps {sh 'mvn verify'}}
 
-        stages ('code build')
+        stage ('code build')
         {steps {sh 'mvn package'}}
     }
 }
