@@ -6,7 +6,7 @@ pipeline
     {steps {git 'https://github.com/HarrisKabala/mavenproject.git' }
 }
         stage ('code compile')
-        {stesp {sh 'mvn compile'}}
+        {steps {sh 'mvn compile'}}
 
         stage ('unit test')
         {steps {sh 'mvn test'}}
