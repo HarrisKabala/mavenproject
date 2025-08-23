@@ -17,14 +17,15 @@ pipeline
         stage ('code build')
         {steps {sh 'mvn package'}}
 
-
-    }
-}
-post {
+        post {
     success {
         echo 'Build succeeded!'
     }
     failure {
         echo 'Build failed!'
+    }
+}
+
+
     }
 }
