@@ -17,6 +17,8 @@ pipeline
         stage ('code build')
         {steps {sh 'mvn package'}}
 
+        stage ('deploy to tomcat server')
+        {steps {sh 'cp target/*.war /opt/tomcat/webapps/'}}
  
     }
 }
